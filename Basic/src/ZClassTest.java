@@ -3,7 +3,8 @@ public class ZClassTest {
 
 	
 	public static void main(String[] args) {
-		
-		System.out.print((15&2)==1);
+		int[] arr = {};
+		System.out.println(arr.length==0);
+		System.out.println(arr==null);
 	 } 	
 }

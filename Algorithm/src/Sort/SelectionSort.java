@@ -8,13 +8,15 @@ public class SelectionSort { // O(n^2)
 		if (arr == null || arr.length < 2) {
 			return;
 		}
-		for (int i = 0; i < arr.length - 1; i++) { // 0 ~ N-2
+		for (int i = 0; i < arr.length - 1; i++) { // 0~N-2
 			int minIndex = i;
 			for (int j = i + 1; j < arr.length; j++) {
 				// ±È½Ï0,1 1,2 ... N-2,N-1
-				minIndex = arr[j] < arr[i] ? arr[minIndex] : minIndex;
+				minIndex = arr[j] < arr[minIndex] ? j : minIndex;
 			}
-		swap(arr, i, minIndex);
+			
+			swap(arr, i, minIndex);
+		
 		}
 	}
 	
@@ -22,6 +24,15 @@ public class SelectionSort { // O(n^2)
 		int tmp = arr[i];
 		arr[i] = arr[j];
 		arr[j] = tmp;
+	}
+	
+	// test
+	public static void main(String[] agrs) {
+		int[] arr = {5,2,4,6,1,3};
+		selectionSort(arr);
+		for (int i : arr) {
+			System.out.print(i + " ");
+		}
 	}
 	
 }
